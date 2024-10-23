@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Instances</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; }
+        .container { width: 80%; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h1 { text-align: center; }
+        input[type="text"] { width: 200px; padding: 10px; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; }
+        button:hover { background-color: #0056b3; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 10px; background: #e9ecef; margin: 5px 0; border-radius: 5px; }
+        a { color: #dc3545; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manage Instances</h1>
+        <form method="POST">
+            <input type="text" name="instance_name" placeholder="Instance Name" required>
+            <button type="submit">Create Instance</button>
+        </form>
+
+        <h2>Existing Instances</h2>
+        <ul>
+            {% for instance in instances %}
+                <li>
+                    {{ instance }} 
+                    <a href="{{ url_for('delete_instance', instance_name=instance) }}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>
