@@ -1,0 +1,1 @@
+{"admin": {"password": "scrypt:32768:8:1$f49Sn0nesLWntdfE$98c3c06c326b4d013462f1e7fac69f3c65e654ea773eecd89905f381a3057267af350bdde6acb1111eafe9e885401db280db7c7339a9c0f9f34da812ef3c84e4", "instance_name": "test1", "role": "user"}}
